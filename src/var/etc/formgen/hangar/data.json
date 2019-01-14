@@ -1,0 +1,38 @@
+{
+    "formgen\\bo\\CiDynamicForm": {
+        "dynamicForm": {
+            "prop-def": "n2n\\impl\\persistence\\orm\\property\\hangar\\relation\\ManyToOnePropDef",
+            "props": {
+                "targetEntityClass": "formgen\\bo\\DynamicForm",
+                "mappedBy": null,
+                "cascadeType": [],
+                "fetchType": "lazy"
+            }
+        }
+    },
+    "formgen\\bo\\FormElement": {
+        "id": {
+            "prop-def": "n2n\\impl\\persistence\\orm\\property\\hangar\\scalar\\IntegerPropDef",
+            "props": {
+                "size": "32",
+                "signed": false
+            }
+        },
+        "dynamicForm": {
+            "prop-def": "n2n\\impl\\persistence\\orm\\property\\hangar\\relation\\ManyToOnePropDef",
+            "props": {
+                "targetEntityClass": "formgen\\bo\\DynamicForm",
+                "mappedBy": null,
+                "cascadeType": [],
+                "fetchType": "lazy"
+            }
+        },
+        "orderIndex": {
+            "prop-def": "n2n\\impl\\persistence\\orm\\property\\hangar\\scalar\\StringPropDef",
+            "props": {
+                "length": "255",
+                "charset": null
+            }
+        }
+    }
+}

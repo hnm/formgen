@@ -1,0 +1,1077 @@
+{
+    "types": {
+        "formgen-form-option": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\FormOption",
+            "dataSourceName": null,
+            "label": "Form Option",
+            "pluralLabel": "Form Options",
+            "iconType": null,
+            "identityStringPattern": "{formOptionTs.label}",
+            "props": {
+                "mandatory": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\bool\\BooleanEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "draftable": false
+                    },
+                    "label": "Mandatory",
+                    "objectProperty": "mandatory",
+                    "entityProperty": "mandatory"
+                },
+                "formOptionTs": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\translation\\TranslationEiProp",
+                    "props": {
+                        "draftable": false,
+                        "useSystemN2nLocales": true,
+                        "systenN2nLocaleDefs": [],
+                        "customN2nLocaleDefs": [],
+                        "min": "0"
+                    },
+                    "label": "Form Option Ts",
+                    "objectProperty": "formOptionTs",
+                    "entityProperty": "formOptionTs"
+                }
+            },
+            "commands": [],
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-string-form-option": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\StringFormOption",
+            "dataSourceName": null,
+            "label": "Texteingabe",
+            "pluralLabel": "Texteingaben",
+            "iconType": null,
+            "identityStringPattern": "{formOptionTs.label}",
+            "props": {
+                "maxLength": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\numeric\\IntegerEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": false,
+                        "draftable": false,
+                        "minValue": "-2147483648",
+                        "maxValue": "2147483647"
+                    },
+                    "label": "Max. Zeichenl\u00e4nge",
+                    "objectProperty": "maxLength",
+                    "entityProperty": "maxLength"
+                },
+                "multiline": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\bool\\BooleanEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "draftable": false
+                    },
+                    "label": "Multiline?",
+                    "objectProperty": "multiline",
+                    "entityProperty": "multiline"
+                },
+                "stringFormOptionTs": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\translation\\TranslationEiProp",
+                    "props": {
+                        "draftable": false,
+                        "useSystemN2nLocales": true,
+                        "systenN2nLocaleDefs": [],
+                        "customN2nLocaleDefs": [],
+                        "min": "0"
+                    },
+                    "label": "String Form Option Ts",
+                    "objectProperty": "stringFormOptionTs",
+                    "entityProperty": "stringFormOptionTs"
+                }
+            },
+            "commands": [],
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-bool-form-option": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\BoolFormOption",
+            "dataSourceName": null,
+            "label": "Checkbox",
+            "pluralLabel": "Checkbox",
+            "iconType": "fa fa-check-square-o",
+            "identityStringPattern": "{formOptionTs.label}",
+            "props": {
+                "default": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\bool\\BooleanEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "draftable": false
+                    },
+                    "label": "Standard",
+                    "objectProperty": "default",
+                    "entityProperty": "default"
+                }
+            },
+            "commands": [],
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-date-form-option": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\DateFormOption",
+            "dataSourceName": null,
+            "label": "Datumseingabe",
+            "pluralLabel": "Datumseingaben",
+            "iconType": null,
+            "identityStringPattern": "{formOptionTs.label}",
+            "props": {
+                "defaultType": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\enum\\EnumEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": false,
+                        "draftable": false,
+                        "options": {
+                            "today": "Heute",
+                            "tomorrow": "Morgen",
+                            "specific": "Spezifisch"
+                        },
+                        "associatedGuiProps": []
+                    },
+                    "label": "Standard Typ",
+                    "objectProperty": "defaultType",
+                    "entityProperty": "defaultType"
+                },
+                "defaultDate": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\date\\DateTimeEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": false,
+                        "draftable": false,
+                        "dateStyle": "medium",
+                        "timeStyle": "short"
+                    },
+                    "label": "Standard Datum",
+                    "objectProperty": "defaultDate",
+                    "entityProperty": "defaultDate"
+                }
+            },
+            "commands": [],
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-dynamic-form": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\DynamicForm",
+            "dataSourceName": null,
+            "label": "Dynamisches Formular",
+            "pluralLabel": "Dynamische Formulare",
+            "iconType": null,
+            "identityStringPattern": "{dynamicFormTs.title}",
+            "props": {
+                "dynamicFormTs": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\translation\\TranslationEiProp",
+                    "props": {
+                        "draftable": false,
+                        "useSystemN2nLocales": true,
+                        "systenN2nLocaleDefs": [],
+                        "customN2nLocaleDefs": [],
+                        "min": "1"
+                    },
+                    "label": "Dynamic Form Ts",
+                    "objectProperty": "dynamicFormTs",
+                    "entityProperty": "dynamicFormTs"
+                },
+                "emailAddresses": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\string\\StringArrayEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "helpText": "Geben Sie hier die Adressen an, an welche das Formular geschickt werden soll.",
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": true,
+                        "draftable": false
+                    },
+                    "label": "Mail Adressen",
+                    "objectProperty": "emailAddresses"
+                },
+                "formElements": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\relation\\EmbeddedOneToManyEiProp",
+                    "props": {
+                        "displayInOverview": false,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "draftable": false,
+                        "orphansAllowed": false,
+                        "reduced": true
+                    },
+                    "label": "Formular Elemente",
+                    "objectProperty": "formElements",
+                    "entityProperty": "formElements"
+                }
+            },
+            "commands": {
+                "overviewEiCommand": {
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\OverviewEiCommand",
+                    "props": {
+                        "pageSize": "30"
+                    }
+                },
+                "detailEiCommand": {
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\DetailEiCommand",
+                    "props": []
+                },
+                "editEiCommand": {
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\EditEiCommand",
+                    "props": []
+                },
+                "addEiCommand": {
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\AddEiCommand",
+                    "props": []
+                },
+                "deleteEiCommand": {
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\DeleteEiCommand",
+                    "props": []
+                }
+            },
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-email-form-option": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\EmailFormOption",
+            "dataSourceName": null,
+            "label": "E-Maileingabe",
+            "pluralLabel": "E-Maileingaben",
+            "iconType": null,
+            "identityStringPattern": "{formOptionTs.label}",
+            "props": {
+                "sendCopy": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\bool\\BooleanEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "draftable": false
+                    },
+                    "label": "Formular Kopie senden?",
+                    "objectProperty": "sendCopy",
+                    "entityProperty": "sendCopy"
+                }
+            },
+            "commands": [],
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-form-element": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\FormElement",
+            "dataSourceName": null,
+            "label": "Formular Element",
+            "pluralLabel": "Formular Elemente",
+            "iconType": null,
+            "props": {
+                "identityStringEiProp": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\meta\\IdentityStringEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": false,
+                        "displayInAddView": false
+                    },
+                    "label": "ID"
+                },
+                "orderIndex": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\numeric\\OrderEiProp",
+                    "props": {
+                        "displayInOverview": false,
+                        "displayInDetailView": true,
+                        "displayInEditView": false,
+                        "displayInAddView": false,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": false,
+                        "draftable": false,
+                        "minValue": "-2147483648",
+                        "maxValue": "2147483647"
+                    },
+                    "label": "Order Index",
+                    "objectProperty": "orderIndex",
+                    "entityProperty": "orderIndex"
+                }
+            },
+            "commands": {
+                "overviewEiCommand": {
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\OverviewEiCommand",
+                    "props": {
+                        "pageSize": "30"
+                    }
+                },
+                "detailEiCommand": {
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\DetailEiCommand",
+                    "props": []
+                },
+                "editEiCommand": {
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\EditEiCommand",
+                    "props": []
+                },
+                "addEiCommand": {
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\AddEiCommand",
+                    "props": []
+                },
+                "deleteEiCommand": {
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\DeleteEiCommand",
+                    "props": []
+                }
+            },
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-form-option-t": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\FormOptionT",
+            "dataSourceName": null,
+            "label": "Form Option T",
+            "pluralLabel": "Form Option Ts",
+            "iconType": null,
+            "props": {
+                "id": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\numeric\\IntegerEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": false,
+                        "displayInAddView": false,
+                        "constant": false,
+                        "readOnly": true,
+                        "mandatory": false,
+                        "draftable": false,
+                        "minValue": "0",
+                        "maxValue": "4294967295"
+                    },
+                    "label": "Id",
+                    "objectProperty": "id",
+                    "entityProperty": "id"
+                },
+                "label": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\string\\StringEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": true,
+                        "draftable": false,
+                        "maxlength": "255",
+                        "multiline": false
+                    },
+                    "label": "Label",
+                    "objectProperty": "label",
+                    "entityProperty": "label"
+                },
+                "helpText": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\string\\StringEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "helpText": "Wird unter dem Formular angegeben",
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": false,
+                        "draftable": false,
+                        "maxlength": "255",
+                        "multiline": true
+                    },
+                    "label": "Hilfetext",
+                    "objectProperty": "helpText",
+                    "entityProperty": "helpText"
+                }
+            },
+            "commands": [],
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-form-text": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\FormText",
+            "dataSourceName": null,
+            "label": "Text",
+            "pluralLabel": "Texte",
+            "iconType": null,
+            "identityStringPattern": "Text",
+            "props": {
+                "formTextTs": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\translation\\TranslationEiProp",
+                    "props": {
+                        "draftable": false,
+                        "useSystemN2nLocales": true,
+                        "systenN2nLocaleDefs": [],
+                        "customN2nLocaleDefs": [],
+                        "min": "0"
+                    },
+                    "label": "Form Text Ts",
+                    "objectProperty": "formTextTs",
+                    "entityProperty": "formTextTs"
+                }
+            },
+            "commands": [],
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-form-text-t": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\FormTextT",
+            "dataSourceName": null,
+            "label": "Form Text T",
+            "pluralLabel": "Form Text Ts",
+            "iconType": null,
+            "props": {
+                "textHtml": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\string\\cke\\CkeEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": true,
+                        "draftable": false,
+                        "mode": "normal",
+                        "linkProviders": [],
+                        "tablesSupported": false
+                    },
+                    "label": "Text",
+                    "objectProperty": "textHtml",
+                    "entityProperty": "textHtml"
+                }
+            },
+            "commands": [],
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-form-title": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\FormTitle",
+            "dataSourceName": null,
+            "label": "Titel",
+            "pluralLabel": "Titel",
+            "iconType": null,
+            "identityStringPattern": "{formTitleTs.title}",
+            "props": {
+                "formTitleTs": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\translation\\TranslationEiProp",
+                    "props": {
+                        "draftable": false,
+                        "useSystemN2nLocales": true,
+                        "systenN2nLocaleDefs": [],
+                        "customN2nLocaleDefs": [],
+                        "min": "0"
+                    },
+                    "label": "Form Title Ts",
+                    "objectProperty": "formTitleTs",
+                    "entityProperty": "formTitleTs"
+                }
+            },
+            "commands": {
+                "overviewEiCommand": {
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\OverviewEiCommand",
+                    "props": {
+                        "pageSize": "30"
+                    }
+                }
+            },
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-form-title-t": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\FormTitleT",
+            "dataSourceName": null,
+            "label": "Form Title T",
+            "pluralLabel": "Form Title Ts",
+            "iconType": null,
+            "props": {
+                "title": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\string\\StringEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": true,
+                        "draftable": false,
+                        "maxlength": "255",
+                        "multiline": false
+                    },
+                    "label": "Title",
+                    "objectProperty": "title",
+                    "entityProperty": "title"
+                }
+            },
+            "commands": {
+                "overviewEiCommand": {
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\OverviewEiCommand",
+                    "props": {
+                        "pageSize": "30"
+                    }
+                },
+                "detailEiCommand": {
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\DetailEiCommand",
+                    "props": []
+                },
+                "editEiCommand": {
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\EditEiCommand",
+                    "props": []
+                },
+                "addEiCommand": {
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\AddEiCommand",
+                    "props": []
+                },
+                "deleteEiCommand": {
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\DeleteEiCommand",
+                    "props": []
+                }
+            },
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-multi-form-option": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\MultiFormOption",
+            "dataSourceName": null,
+            "label": "Mehrfachauswahl",
+            "pluralLabel": "Mehrfachauswahl",
+            "iconType": "fa fa-list-ul",
+            "identityStringPattern": "{formOptionTs.label}",
+            "props": {
+                "type": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\enum\\EnumEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": false,
+                        "draftable": false,
+                        "options": {
+                            "radio": "Radio",
+                            "select": "Select (Dropdown)",
+                            "checkbox": "Checkbox"
+                        },
+                        "associatedGuiProps": []
+                    },
+                    "label": "Type",
+                    "objectProperty": "type",
+                    "entityProperty": "type"
+                },
+                "multiFormOptionValues": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\relation\\EmbeddedOneToManyEiProp",
+                    "props": {
+                        "displayInOverview": false,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "draftable": false,
+                        "orphansAllowed": false,
+                        "reduced": true
+                    },
+                    "label": "Multi Form Option Values",
+                    "objectProperty": "multiFormOptionValues",
+                    "entityProperty": "multiFormOptionValues"
+                }
+            },
+            "commands": [],
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-multi-form-option-value": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\MultiFormOptionValue",
+            "dataSourceName": null,
+            "label": "Eingabewert",
+            "pluralLabel": "Eingabewerte",
+            "iconType": null,
+            "props": {
+                "id": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\numeric\\IntegerEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": false,
+                        "displayInAddView": false,
+                        "constant": false,
+                        "readOnly": true,
+                        "mandatory": false,
+                        "draftable": false,
+                        "minValue": "0",
+                        "maxValue": "4294967295"
+                    },
+                    "label": "Id",
+                    "objectProperty": "id",
+                    "entityProperty": "id"
+                },
+                "multiFormOptionValueTs": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\translation\\TranslationEiProp",
+                    "props": {
+                        "draftable": false,
+                        "useSystemN2nLocales": true,
+                        "systenN2nLocaleDefs": [],
+                        "customN2nLocaleDefs": [],
+                        "min": "0"
+                    },
+                    "label": "Multi Form Option Value Ts",
+                    "objectProperty": "multiFormOptionValueTs",
+                    "entityProperty": "multiFormOptionValueTs"
+                }
+            },
+            "commands": {
+                "detailEiCommand": {
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\DetailEiCommand",
+                    "props": []
+                },
+                "editEiCommand": {
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\EditEiCommand",
+                    "props": []
+                },
+                "addEiCommand": {
+                    "class": "rocket\\impl\\ei\\component\\command\\common\\AddEiCommand",
+                    "props": []
+                }
+            },
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-multi-form-option-value-t": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\MultiFormOptionValueT",
+            "dataSourceName": null,
+            "label": "Multi Form Option Value T",
+            "pluralLabel": "Multi Form Option Value Ts",
+            "iconType": null,
+            "props": {
+                "label": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\string\\StringEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": false,
+                        "draftable": false,
+                        "maxlength": "255",
+                        "multiline": false
+                    },
+                    "label": "Label",
+                    "objectProperty": "label",
+                    "entityProperty": "label"
+                }
+            },
+            "commands": [],
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-numeric-form-option": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\NumericFormOption",
+            "dataSourceName": null,
+            "label": "Nummerische Eingabe",
+            "pluralLabel": "Nummerische Eingaben",
+            "iconType": null,
+            "identityStringPattern": "{formOptionTs.label}",
+            "props": {
+                "default": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\numeric\\DecimalEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": false,
+                        "draftable": false,
+                        "decimalPlaces": "0"
+                    },
+                    "label": "Default",
+                    "objectProperty": "default",
+                    "entityProperty": "default"
+                },
+                "min": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\numeric\\DecimalEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": false,
+                        "draftable": false,
+                        "decimalPlaces": "0"
+                    },
+                    "label": "Min",
+                    "objectProperty": "min",
+                    "entityProperty": "min"
+                },
+                "max": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\numeric\\DecimalEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": false,
+                        "draftable": false,
+                        "decimalPlaces": "0"
+                    },
+                    "label": "Max",
+                    "objectProperty": "max",
+                    "entityProperty": "max"
+                }
+            },
+            "commands": [],
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-static-form-option": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\StaticFormOption",
+            "dataSourceName": null,
+            "label": "Label mit Text",
+            "pluralLabel": "Labels mit Text",
+            "iconType": null,
+            "identityStringPattern": "{staticFormOptionTs.label}",
+            "props": {
+                "staticFormOptionTs": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\translation\\TranslationEiProp",
+                    "props": {
+                        "draftable": false,
+                        "useSystemN2nLocales": true,
+                        "systenN2nLocaleDefs": [],
+                        "customN2nLocaleDefs": [],
+                        "min": "0"
+                    },
+                    "label": "Static Form Option Ts",
+                    "objectProperty": "staticFormOptionTs",
+                    "entityProperty": "staticFormOptionTs"
+                }
+            },
+            "commands": [],
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-static-form-option-t": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\StaticFormOptionT",
+            "dataSourceName": null,
+            "label": "Static Form Option T",
+            "pluralLabel": "Static Form Option Ts",
+            "iconType": null,
+            "props": {
+                "label": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\string\\StringEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": true,
+                        "draftable": false,
+                        "maxlength": "255",
+                        "multiline": false
+                    },
+                    "label": "Label",
+                    "objectProperty": "label",
+                    "entityProperty": "label"
+                },
+                "value": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\string\\StringEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": true,
+                        "draftable": false,
+                        "maxlength": "255",
+                        "multiline": false
+                    },
+                    "label": "Value",
+                    "objectProperty": "value",
+                    "entityProperty": "value"
+                }
+            },
+            "commands": [],
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-string-form-option-t": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\StringFormOptionT",
+            "dataSourceName": null,
+            "label": "String Form Option T",
+            "pluralLabel": "String Form Option Ts",
+            "iconType": null,
+            "props": {
+                "default": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\string\\StringEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": false,
+                        "draftable": false,
+                        "maxlength": "255",
+                        "multiline": false
+                    },
+                    "label": "Standartwert",
+                    "objectProperty": "default",
+                    "entityProperty": "default"
+                }
+            },
+            "commands": [],
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-ci-dynamic-form": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\CiDynamicForm",
+            "dataSourceName": null,
+            "label": "Dynamisches Formular",
+            "pluralLabel": "Dynamische Formulare",
+            "iconType": null,
+            "props": {
+                "dynamicForm": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\relation\\ManyToOneSelectEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": true,
+                        "draftable": false,
+                        "targetRemovalStrategy": "prevent",
+                        "embeddedAddEnabled": false,
+                        "filtered": true,
+                        "hiddenIfTargetEmpty": false
+                    },
+                    "label": "Dynamic Form",
+                    "objectProperty": "dynamicForm",
+                    "entityProperty": "dynamicForm"
+                }
+            },
+            "commands": [],
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-dynamic-form-t": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\DynamicFormT",
+            "dataSourceName": null,
+            "label": "Dynamic Form T",
+            "pluralLabel": "Dynamic Form Ts",
+            "iconType": null,
+            "props": {
+                "title": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\string\\StringEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": true,
+                        "draftable": false,
+                        "maxlength": null,
+                        "multiline": false
+                    },
+                    "label": "Titel",
+                    "objectProperty": "title",
+                    "entityProperty": "title"
+                },
+                "submitLabel": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\string\\StringEiProp",
+                    "props": {
+                        "displayInOverview": false,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": false,
+                        "draftable": false,
+                        "maxlength": "255",
+                        "multiline": false
+                    },
+                    "label": "Submit Label",
+                    "objectProperty": "submitLabel",
+                    "entityProperty": "submitLabel"
+                },
+                "textThanksHtml": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\string\\cke\\CkeEiProp",
+                    "props": {
+                        "displayInOverview": false,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "helpText": "Dieser Text wird dem Besucher nach dem Abschicken des Formulares angezeigt.",
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": true,
+                        "draftable": false,
+                        "mode": "normal",
+                        "linkProviders": [],
+                        "tablesSupported": false
+                    },
+                    "label": "Text Dankeseite",
+                    "objectProperty": "textThanksHtml",
+                    "entityProperty": "textThanksHtml"
+                },
+                "mailSubject": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\string\\StringEiProp",
+                    "props": {
+                        "displayInOverview": false,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "helpText": "Betreffzeile des Mails mit dem Formular Inhalt",
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": false,
+                        "draftable": false,
+                        "maxlength": "255",
+                        "multiline": false
+                    },
+                    "label": "Mail Betreff",
+                    "objectProperty": "mailSubject",
+                    "entityProperty": "mailSubject"
+                },
+                "mailTextIntro": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\string\\StringEiProp",
+                    "props": {
+                        "displayInOverview": false,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "helpText": "Einleitender Text vor den Formulardaten",
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": false,
+                        "draftable": false,
+                        "maxlength": "1000",
+                        "multiline": true
+                    },
+                    "label": "Mail Text Intro",
+                    "objectProperty": "mailTextIntro",
+                    "entityProperty": "mailTextIntro"
+                },
+                "mailTextOutro": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\string\\StringEiProp",
+                    "props": {
+                        "displayInOverview": false,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "helpText": "Text nach den Formulardaten",
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": false,
+                        "draftable": false,
+                        "maxlength": "1000",
+                        "multiline": true
+                    },
+                    "label": "Mail Text Outro",
+                    "objectProperty": "mailTextOutro",
+                    "entityProperty": "mailTextOutro"
+                }
+            },
+            "commands": [],
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        }
+    },
+    "eiTypeExtensions": [],
+    "launchPads": {
+        "formgen-dynamic-form": []
+    }
+}
