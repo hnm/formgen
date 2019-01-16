@@ -11,7 +11,6 @@ use n2n\impl\web\ui\view\html\HtmlView;
 use n2n\web\ui\UiComponent;
 use n2n\l10n\N2nLocale;
 use n2n\web\dispatch\mag\Mag;
-use formgen\bo\DynamicForm;
 
 abstract class FormElement extends ObjectAdapter {
 	private static function _annos(AnnoInit $ai) {

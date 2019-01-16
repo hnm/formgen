@@ -5,7 +5,6 @@ use rocket\impl\ei\component\prop\ci\model\ContentItem;
 use n2n\impl\web\ui\view\html\HtmlView;
 use n2n\persistence\orm\annotation\AnnoTable;
 use n2n\reflection\annotation\AnnoInit;
-use formgen\bo\DynamicForm;
 use n2n\persistence\orm\annotation\AnnoManyToOne;
 
 class CiDynamicForm extends ContentItem {

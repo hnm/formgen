@@ -4,7 +4,7 @@ namespace formgen\bo;
 use n2n\l10n\N2nLocale;
 use n2n\web\dispatch\mag\Mag;
 use n2n\l10n\DateTimeFormat;
-use n2n\reflection\CastUtils;
+use n2n\util\type\CastUtils;
 use n2n\l10n\L10nUtils;
 use n2nutil\jquery\datepicker\mag\DateTimePickerMag;
 use n2n\reflection\annotation\AnnoInit;

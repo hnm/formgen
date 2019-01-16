@@ -9,7 +9,7 @@ use n2n\persistence\orm\CascadeType;
 use n2n\persistence\orm\FetchType;
 use n2n\util\StringUtils;
 use n2n\web\dispatch\mag\MagCollection;
-use n2n\reflection\CastUtils;
+use n2n\util\type\CastUtils;
 use n2n\l10n\N2nLocale;
 use n2n\impl\web\dispatch\mag\model\MagForm;
 use n2n\persistence\orm\annotation\AnnoOrderBy;
