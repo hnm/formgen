@@ -40,6 +40,11 @@ class NumericFormOption extends FormOption {
 		$this->max = $max;
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 * @see \formgen\bo\FormElement::buildMag()
+	 * @return Mag|null
+	 */
 	public function buildMag(N2nLocale $n2nLocale): ?Mag {
 		return $this->applyAttributes($n2nLocale, new NumericMag($this->getLabel($n2nLocale), 
 				$this->default, $this->isMandatory(), $this->min, $this->max));

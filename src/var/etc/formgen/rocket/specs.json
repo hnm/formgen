@@ -8,11 +8,17 @@
             "pluralLabel": "Form Options",
             "iconType": null,
             "identityStringPattern": "{formOptionTs.label}",
+            "filterData": {
+                "useAnd": true,
+                "items": [],
+                "groups": []
+            },
+            "defaultSort": [],
             "props": {
                 "mandatory": {
                     "class": "rocket\\impl\\ei\\component\\prop\\bool\\BooleanEiProp",
                     "props": {
-                        "displayInOverview": true,
+                        "displayInOverview": false,
                         "displayInDetailView": true,
                         "displayInEditView": true,
                         "displayInAddView": true,
@@ -20,7 +26,7 @@
                         "readOnly": false,
                         "draftable": false
                     },
-                    "label": "Mandatory",
+                    "label": "Pflichtfeld?",
                     "objectProperty": "mandatory",
                     "entityProperty": "mandatory"
                 },
@@ -29,9 +35,25 @@
                     "props": {
                         "draftable": false,
                         "useSystemN2nLocales": true,
-                        "systenN2nLocaleDefs": [],
+                        "systenN2nLocaleDefs": [
+                            {
+                                "id": "de_CH",
+                                "mandatory": false,
+                                "label": null
+                            },
+                            {
+                                "id": "en",
+                                "mandatory": false,
+                                "label": null
+                            },
+                            {
+                                "id": "fr_CH",
+                                "mandatory": false,
+                                "label": null
+                            }
+                        ],
                         "customN2nLocaleDefs": [],
-                        "min": "0"
+                        "min": "1"
                     },
                     "label": "Form Option Ts",
                     "objectProperty": "formOptionTs",
@@ -51,11 +73,17 @@
             "pluralLabel": "Texteingaben",
             "iconType": null,
             "identityStringPattern": "{formOptionTs.label}",
+            "filterData": {
+                "useAnd": true,
+                "items": [],
+                "groups": []
+            },
+            "defaultSort": [],
             "props": {
                 "maxLength": {
                     "class": "rocket\\impl\\ei\\component\\prop\\numeric\\IntegerEiProp",
                     "props": {
-                        "displayInOverview": true,
+                        "displayInOverview": false,
                         "displayInDetailView": true,
                         "displayInEditView": true,
                         "displayInAddView": true,
@@ -73,7 +101,7 @@
                 "multiline": {
                     "class": "rocket\\impl\\ei\\component\\prop\\bool\\BooleanEiProp",
                     "props": {
-                        "displayInOverview": true,
+                        "displayInOverview": false,
                         "displayInDetailView": true,
                         "displayInEditView": true,
                         "displayInAddView": true,
@@ -90,9 +118,25 @@
                     "props": {
                         "draftable": false,
                         "useSystemN2nLocales": true,
-                        "systenN2nLocaleDefs": [],
+                        "systenN2nLocaleDefs": [
+                            {
+                                "id": "de_CH",
+                                "mandatory": false,
+                                "label": null
+                            },
+                            {
+                                "id": "en",
+                                "mandatory": false,
+                                "label": null
+                            },
+                            {
+                                "id": "fr_CH",
+                                "mandatory": false,
+                                "label": null
+                            }
+                        ],
                         "customN2nLocaleDefs": [],
-                        "min": "0"
+                        "min": "1"
                     },
                     "label": "String Form Option Ts",
                     "objectProperty": "stringFormOptionTs",
@@ -375,29 +419,17 @@
             "label": "Form Option T",
             "pluralLabel": "Form Option Ts",
             "iconType": null,
+            "filterData": {
+                "useAnd": true,
+                "items": [],
+                "groups": []
+            },
+            "defaultSort": [],
             "props": {
-                "id": {
-                    "class": "rocket\\impl\\ei\\component\\prop\\numeric\\IntegerEiProp",
-                    "props": {
-                        "displayInOverview": true,
-                        "displayInDetailView": true,
-                        "displayInEditView": false,
-                        "displayInAddView": false,
-                        "constant": false,
-                        "readOnly": true,
-                        "mandatory": false,
-                        "draftable": false,
-                        "minValue": "0",
-                        "maxValue": "4294967295"
-                    },
-                    "label": "Id",
-                    "objectProperty": "id",
-                    "entityProperty": "id"
-                },
                 "label": {
                     "class": "rocket\\impl\\ei\\component\\prop\\string\\StringEiProp",
                     "props": {
-                        "displayInOverview": true,
+                        "displayInOverview": false,
                         "displayInDetailView": true,
                         "displayInEditView": true,
                         "displayInAddView": true,
@@ -415,7 +447,7 @@
                 "helpText": {
                     "class": "rocket\\impl\\ei\\component\\prop\\string\\StringEiProp",
                     "props": {
-                        "displayInOverview": true,
+                        "displayInOverview": false,
                         "displayInDetailView": true,
                         "displayInEditView": true,
                         "displayInAddView": true,
@@ -445,15 +477,37 @@
             "pluralLabel": "Texte",
             "iconType": null,
             "identityStringPattern": "Text",
+            "filterData": {
+                "useAnd": true,
+                "items": [],
+                "groups": []
+            },
+            "defaultSort": [],
             "props": {
                 "formTextTs": {
                     "class": "rocket\\impl\\ei\\component\\prop\\translation\\TranslationEiProp",
                     "props": {
                         "draftable": false,
                         "useSystemN2nLocales": true,
-                        "systenN2nLocaleDefs": [],
+                        "systenN2nLocaleDefs": [
+                            {
+                                "id": "de_CH",
+                                "mandatory": false,
+                                "label": null
+                            },
+                            {
+                                "id": "en",
+                                "mandatory": false,
+                                "label": null
+                            },
+                            {
+                                "id": "fr_CH",
+                                "mandatory": false,
+                                "label": null
+                            }
+                        ],
                         "customN2nLocaleDefs": [],
-                        "min": "0"
+                        "min": "1"
                     },
                     "label": "Form Text Ts",
                     "objectProperty": "formTextTs",
@@ -506,15 +560,37 @@
             "pluralLabel": "Titel",
             "iconType": null,
             "identityStringPattern": "{formTitleTs.title}",
+            "filterData": {
+                "useAnd": true,
+                "items": [],
+                "groups": []
+            },
+            "defaultSort": [],
             "props": {
                 "formTitleTs": {
                     "class": "rocket\\impl\\ei\\component\\prop\\translation\\TranslationEiProp",
                     "props": {
                         "draftable": false,
                         "useSystemN2nLocales": true,
-                        "systenN2nLocaleDefs": [],
+                        "systenN2nLocaleDefs": [
+                            {
+                                "id": "de_CH",
+                                "mandatory": false,
+                                "label": null
+                            },
+                            {
+                                "id": "en",
+                                "mandatory": false,
+                                "label": null
+                            },
+                            {
+                                "id": "fr_CH",
+                                "mandatory": false,
+                                "label": null
+                            }
+                        ],
                         "customN2nLocaleDefs": [],
-                        "min": "0"
+                        "min": "1"
                     },
                     "label": "Form Title Ts",
                     "objectProperty": "formTitleTs",
@@ -596,6 +672,12 @@
             "pluralLabel": "Mehrfachauswahl",
             "iconType": "fa fa-list-ul",
             "identityStringPattern": "{formOptionTs.label}",
+            "filterData": {
+                "useAnd": true,
+                "items": [],
+                "groups": []
+            },
+            "defaultSort": [],
             "props": {
                 "type": {
                     "class": "rocket\\impl\\ei\\component\\prop\\enum\\EnumEiProp",
@@ -619,6 +701,35 @@
                     "objectProperty": "type",
                     "entityProperty": "type"
                 },
+                "multiFormOptionTs": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\translation\\TranslationEiProp",
+                    "props": {
+                        "draftable": false,
+                        "useSystemN2nLocales": true,
+                        "systenN2nLocaleDefs": [
+                            {
+                                "id": "de_CH",
+                                "mandatory": false,
+                                "label": null
+                            },
+                            {
+                                "id": "en",
+                                "mandatory": false,
+                                "label": null
+                            },
+                            {
+                                "id": "fr_CH",
+                                "mandatory": false,
+                                "label": null
+                            }
+                        ],
+                        "customN2nLocaleDefs": [],
+                        "min": "1"
+                    },
+                    "label": "Multi Form Option Ts",
+                    "objectProperty": "multiFormOptionTs",
+                    "entityProperty": "multiFormOptionTs"
+                },
                 "multiFormOptionValues": {
                     "class": "rocket\\impl\\ei\\component\\prop\\relation\\EmbeddedOneToManyEiProp",
                     "props": {
@@ -629,6 +740,7 @@
                         "constant": false,
                         "readOnly": false,
                         "draftable": false,
+                        "targetExtensions": [],
                         "orphansAllowed": false,
                         "reduced": true
                     },
@@ -649,37 +761,56 @@
             "label": "Eingabewert",
             "pluralLabel": "Eingabewerte",
             "iconType": null,
+            "filterData": {
+                "useAnd": true,
+                "items": [],
+                "groups": []
+            },
+            "defaultSort": [],
             "props": {
-                "id": {
-                    "class": "rocket\\impl\\ei\\component\\prop\\numeric\\IntegerEiProp",
-                    "props": {
-                        "displayInOverview": true,
-                        "displayInDetailView": true,
-                        "displayInEditView": false,
-                        "displayInAddView": false,
-                        "constant": false,
-                        "readOnly": true,
-                        "mandatory": false,
-                        "draftable": false,
-                        "minValue": "0",
-                        "maxValue": "4294967295"
-                    },
-                    "label": "Id",
-                    "objectProperty": "id",
-                    "entityProperty": "id"
-                },
                 "multiFormOptionValueTs": {
                     "class": "rocket\\impl\\ei\\component\\prop\\translation\\TranslationEiProp",
                     "props": {
                         "draftable": false,
                         "useSystemN2nLocales": true,
-                        "systenN2nLocaleDefs": [],
+                        "systenN2nLocaleDefs": [
+                            {
+                                "id": "de_CH",
+                                "mandatory": false,
+                                "label": null
+                            },
+                            {
+                                "id": "en",
+                                "mandatory": false,
+                                "label": null
+                            },
+                            {
+                                "id": "fr_CH",
+                                "mandatory": false,
+                                "label": null
+                            }
+                        ],
                         "customN2nLocaleDefs": [],
-                        "min": "0"
+                        "min": "1"
                     },
                     "label": "Multi Form Option Value Ts",
                     "objectProperty": "multiFormOptionValueTs",
                     "entityProperty": "multiFormOptionValueTs"
+                },
+                "selected": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\bool\\BooleanEiProp",
+                    "props": {
+                        "displayInOverview": true,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "draftable": false
+                    },
+                    "label": "Ausgew\u00e4hlt",
+                    "objectProperty": "selected",
+                    "entityProperty": "selected"
                 }
             },
             "commands": {
@@ -693,7 +824,9 @@
                 },
                 "addEiCommand": {
                     "class": "rocket\\impl\\ei\\component\\command\\common\\AddEiCommand",
-                    "props": []
+                    "props": {
+                        "duplicateAllowed": true
+                    }
                 }
             },
             "partialControlOrder": [],
@@ -806,15 +939,37 @@
             "pluralLabel": "Labels mit Text",
             "iconType": null,
             "identityStringPattern": "{staticFormOptionTs.label}",
+            "filterData": {
+                "useAnd": true,
+                "items": [],
+                "groups": []
+            },
+            "defaultSort": [],
             "props": {
                 "staticFormOptionTs": {
                     "class": "rocket\\impl\\ei\\component\\prop\\translation\\TranslationEiProp",
                     "props": {
                         "draftable": false,
                         "useSystemN2nLocales": true,
-                        "systenN2nLocaleDefs": [],
+                        "systenN2nLocaleDefs": [
+                            {
+                                "id": "de_CH",
+                                "mandatory": false,
+                                "label": null
+                            },
+                            {
+                                "id": "en",
+                                "mandatory": false,
+                                "label": null
+                            },
+                            {
+                                "id": "fr_CH",
+                                "mandatory": false,
+                                "label": null
+                            }
+                        ],
                         "customN2nLocaleDefs": [],
-                        "min": "0"
+                        "min": "1"
                     },
                     "label": "Static Form Option Ts",
                     "objectProperty": "staticFormOptionTs",
@@ -883,11 +1038,17 @@
             "label": "String Form Option T",
             "pluralLabel": "String Form Option Ts",
             "iconType": null,
+            "filterData": {
+                "useAnd": true,
+                "items": [],
+                "groups": []
+            },
+            "defaultSort": [],
             "props": {
                 "default": {
                     "class": "rocket\\impl\\ei\\component\\prop\\string\\StringEiProp",
                     "props": {
-                        "displayInOverview": true,
+                        "displayInOverview": false,
                         "displayInDetailView": true,
                         "displayInEditView": true,
                         "displayInAddView": true,
@@ -898,7 +1059,7 @@
                         "maxlength": "255",
                         "multiline": false
                     },
-                    "label": "Standartwert",
+                    "label": "Standardwert",
                     "objectProperty": "default",
                     "entityProperty": "default"
                 }
@@ -1062,6 +1223,85 @@
                     "label": "Mail Text Outro",
                     "objectProperty": "mailTextOutro",
                     "entityProperty": "mailTextOutro"
+                }
+            },
+            "commands": [],
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-form-element-set": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\FormElementSet",
+            "dataSourceName": null,
+            "label": "Formular Element Gruppe",
+            "pluralLabel": "Formular Element Gruppen",
+            "iconType": null,
+            "filterData": {
+                "useAnd": true,
+                "items": [],
+                "groups": []
+            },
+            "defaultSort": [],
+            "props": {
+                "formElements": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\relation\\EmbeddedOneToManyEiProp",
+                    "props": {
+                        "displayInOverview": false,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "draftable": false,
+                        "targetExtensions": [],
+                        "min": "0",
+                        "targetRemovalStrategy": "prevent",
+                        "targetOrderField": "orderIndex",
+                        "orphansAllowed": false,
+                        "reduced": true
+                    },
+                    "label": "Formular Elemente",
+                    "objectProperty": "formElements",
+                    "entityProperty": "formElements"
+                }
+            },
+            "commands": [],
+            "partialControlOrder": [],
+            "overallControlOrder": [],
+            "entryControlOrder": []
+        },
+        "formgen-multi-form-option-t": {
+            "nature": "entity",
+            "entity": "formgen\\bo\\MultiFormOptionT",
+            "dataSourceName": null,
+            "label": "Multi Form Option T",
+            "pluralLabel": "Multi Form Option Ts",
+            "iconType": null,
+            "filterData": {
+                "useAnd": true,
+                "items": [],
+                "groups": []
+            },
+            "defaultSort": [],
+            "props": {
+                "emptyValue": {
+                    "class": "rocket\\impl\\ei\\component\\prop\\string\\StringEiProp",
+                    "props": {
+                        "displayInOverview": false,
+                        "displayInDetailView": true,
+                        "displayInEditView": true,
+                        "displayInAddView": true,
+                        "constant": false,
+                        "readOnly": false,
+                        "mandatory": false,
+                        "draftable": false,
+                        "maxlength": "255",
+                        "multiline": false
+                    },
+                    "label": "Label f\u00fcr Leerwert (nur relevant, wenn kein Pflichtfeld)",
+                    "objectProperty": "emptyValue",
+                    "entityProperty": "emptyValue"
                 }
             },
             "commands": [],

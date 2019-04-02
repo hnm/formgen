@@ -40,6 +40,11 @@ class StaticFormOption extends FormElement {
 		return Translator::findAny($this->staticFormOptionTs, ... $n2nLocales);
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 * @see \formgen\bo\FormElement::createUiComponent()
+	 * @return UiComponent|null
+	 */
 	public function createUiComponent(HtmlView $view): ?UiComponent {
 		$formgenConfig = $view->lookup(FormgenConfig::class);
 		$view->assert($formgenConfig instanceof FormgenConfig);

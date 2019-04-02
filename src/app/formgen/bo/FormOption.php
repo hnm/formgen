@@ -42,9 +42,6 @@ abstract class FormOption extends FormElement {
 	 * @return FormOptionT
 	 */
 	public function t(N2nLocale ... $n2nLocales) {
-		$n2nLocales[] = N2nLocale::getDefault();
-		$n2nLocales[] = N2nLocale::getFallback();
-		
 		return Translator::findAny($this->formOptionTs, ... $n2nLocales);
 	}
 	
@@ -60,6 +57,11 @@ abstract class FormOption extends FormElement {
 		return $mag;
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 * @see \formgen\bo\FormElement::createUiComponent()
+	 * @return UiComponent|null
+	 */
 	public function createUiComponent(HtmlView $view): ?UiComponent {
 		return null;
 	}
@@ -71,6 +73,6 @@ abstract class FormOption extends FormElement {
 	public function buildTextRepresentation(N2nLocale $n2nLocale, string $newLine,
 			string $suggestedLabelWidth, $submittedValue): ?string {
 		$label = $this->t($n2nLocale)->getLabel() . ':';
-		return $label . str_repeat(' ', $suggestedLabelWidth - mb_strlen($label)) . $submittedValue;
+		return $label . str_repeat(' ', $suggestedLabelWidth > mb_strlen($label) ? $suggestedLabelWidth - mb_strlen($label) : 1) . $submittedValue;
 	}
 }

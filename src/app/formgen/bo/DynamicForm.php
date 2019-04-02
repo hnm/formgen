@@ -8,18 +8,18 @@ use n2n\persistence\orm\annotation\AnnoOneToMany;
 use n2n\persistence\orm\CascadeType;
 use n2n\persistence\orm\FetchType;
 use n2n\util\StringUtils;
-use n2n\web\dispatch\mag\MagCollection;
-use n2n\util\type\CastUtils;
 use n2n\l10n\N2nLocale;
 use n2n\impl\web\dispatch\mag\model\MagForm;
 use n2n\persistence\orm\annotation\AnnoOrderBy;
 use rocket\impl\ei\component\prop\translation\Translator;
+use n2n\util\type\CastUtils;
+use formgen\model\FormgenUtils;
 
 class DynamicForm extends ObjectAdapter {
 	private static function _annos(AnnoInit $ai) {
 		$ai->c(new AnnoTable('formgen_dynamic_form'));
 		$ai->p('formElements', new AnnoOneToMany(FormElement::getClass(), 
-						'dynamicForm', CascadeType::ALL, FetchType::EAGER, true), 
+						null, CascadeType::ALL, FetchType::EAGER, true), 
 				new AnnoOrderBy(array('orderIndex' => 'ASC')));
 		$ai->p('dynamicFormTs', new AnnoOneToMany(DynamicFormT::getClass(), 
 				'dynamicForm', CascadeType::ALL, null, true));
@@ -84,16 +84,7 @@ class DynamicForm extends ObjectAdapter {
 	}
 
 	public function createMagForm(N2nLocale $n2nLocale) {
-		$magCollection = new MagCollection();
-		foreach ($this->formElements as $formElement) {
-			CastUtils::assertTrue($formElement instanceof FormElement);
-			$mag = $formElement->buildMag($n2nLocale);
-			
-			if (null === $mag) continue;
-			$magCollection->addMag($formElement->getId(), $mag);
-		}
-		
-		return new MagForm($magCollection);
+		return FormgenUtils::createMagForm($this->formElements, $n2nLocale);
 	}
 	
 	public function determineLocaleDependentEmailAdresses(MagForm $magForm) {

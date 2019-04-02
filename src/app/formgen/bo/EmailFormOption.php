@@ -20,7 +20,12 @@ class EmailFormOption extends FormOption {
 	public function setSendCopy($sendCopy) {
 		$this->sendCopy = $sendCopy;
 	}
-
+	
+	/**
+	 * {@inheritDoc}
+	 * @see \formgen\bo\FormElement::buildMag()
+	 * @return Mag|null
+	 */
 	public function buildMag(N2nLocale $n2nLocale): ?Mag {
 		return $this->applyAttributes($n2nLocale, new EmailMag($this->getLabel($n2nLocale), null, $this->isMandatory()));
 	}

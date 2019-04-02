@@ -33,12 +33,14 @@ class FormTitle extends FormElement {
 	 * @return FormTitleT
 	 */
 	public function t(N2nLocale ... $n2nLocales) {
-		$n2nLocales[] = N2nLocale::getDefault();
-		$n2nLocales[] = N2nLocale::getFallback();
-		
 		return Translator::requireAny($this->formTitleTs, ... $n2nLocales);
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 * @see \formgen\bo\FormElement::createUiComponent()
+	 * @return UiComponent|null
+	 */
 	public function createUiComponent(HtmlView $view): ?UiComponent {
 		$formgenConfig = $view->lookup(FormgenConfig::class);
 		$view->assert($formgenConfig instanceof FormgenConfig);

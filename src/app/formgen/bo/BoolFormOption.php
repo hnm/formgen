@@ -22,6 +22,11 @@ class BoolFormOption extends FormOption {
 		$this->default = $default;
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 * @see \formgen\bo\FormElement::buildMag()
+	 * @return Mag|null
+	 */
 	public function buildMag(N2nLocale $n2nLocale): ?Mag {
 		$mag = (new BoolMag($this->getLabel($n2nLocale), $this->default))->setMandatory($this->isMandatory());
 		return $this->applyAttributes($n2nLocale, $mag);

@@ -6,7 +6,6 @@ use n2n\reflection\annotation\AnnoInit;
 use n2n\persistence\orm\annotation\AnnoTable;
 use n2n\persistence\orm\annotation\AnnoInheritance;
 use n2n\persistence\orm\InheritanceType;
-use n2n\persistence\orm\annotation\AnnoManyToOne;
 use n2n\impl\web\ui\view\html\HtmlView;
 use n2n\web\ui\UiComponent;
 use n2n\l10n\N2nLocale;
@@ -15,17 +14,24 @@ use n2n\web\dispatch\mag\Mag;
 abstract class FormElement extends ObjectAdapter {
 	private static function _annos(AnnoInit $ai) {
 		$ai->c(new AnnoTable('formgen_form_element'), new AnnoInheritance(InheritanceType::JOINED));
-		$ai->p('dynamicForm', new AnnoManyToOne(DynamicForm::getClass()));
 	}
 
 	private $id;
-	private $dynamicForm;
 	private $orderIndex;
-
+	
+	/**
+	 * {@inheritDoc}
+	 * @see \formgen\bo\FormElement::buildMag()
+	 * @return Mag|null
+	 */
 	public function buildMag(N2nLocale $n2nLocale): ?Mag {
 		return null;
 	}
 
+	/**
+	 * @param HtmlView $view
+	 * @return UiComponent|NULL
+	 */
 	public abstract function createUiComponent(HtmlView $view): ?UiComponent;
 	
 	public function buildTextRepresentation(N2nLocale $n2nLocale, string $newLine, 
@@ -43,17 +49,6 @@ abstract class FormElement extends ObjectAdapter {
 
 	public function setId($id) {
 		$this->id = $id;
-	}
-
-	/**
-	 * @return DynamicForm
-	 */
-	public function getDynamicForm() {
-		return $this->dynamicForm;
-	}
-
-	public function setDynamicForm($dynamicForm) {
-		$this->dynamicForm = $dynamicForm;
 	}
 
 	public function getOrderIndex() {

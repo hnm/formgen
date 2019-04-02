@@ -4,11 +4,11 @@ namespace formgen\bo;
 use n2n\l10n\N2nLocale;
 use n2n\web\dispatch\mag\Mag;
 use n2n\l10n\DateTimeFormat;
-use n2n\util\type\CastUtils;
 use n2n\l10n\L10nUtils;
 use n2nutil\jquery\datepicker\mag\DateTimePickerMag;
 use n2n\reflection\annotation\AnnoInit;
 use n2n\persistence\orm\annotation\AnnoTable;
+use n2n\util\type\CastUtils;
 
 class DateFormOption extends FormOption {
 	private static function _annos(AnnoInit $ai) {
@@ -38,6 +38,11 @@ class DateFormOption extends FormOption {
 		$this->defaultDate = $defaultDate;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * @see \formgen\bo\FormElement::buildMag()
+	 * @return Mag|null
+	 */
 	public function buildMag(N2nLocale $n2nLocale): ?Mag {
 		$defaultDate = null;
 		switch ($this->defaultType) {

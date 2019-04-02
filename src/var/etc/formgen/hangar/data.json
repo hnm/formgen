@@ -34,5 +34,147 @@
                 "charset": null
             }
         }
+    },
+    "formgen\\bo\\FormElementSet": {
+        "id": {
+            "prop-def": "n2n\\impl\\persistence\\orm\\property\\hangar\\scalar\\IntegerPropDef",
+            "props": {
+                "size": "32",
+                "signed": true
+            }
+        },
+        "title": {
+            "prop-def": "n2n\\impl\\persistence\\orm\\property\\hangar\\scalar\\StringPropDef",
+            "props": {
+                "length": "255",
+                "charset": null
+            }
+        },
+        "formElements": {
+            "prop-def": "n2n\\impl\\persistence\\orm\\property\\hangar\\relation\\OneToManyPropDef",
+            "props": {
+                "targetEntityClass": "formgen\\bo\\FormElement",
+                "mappedBy": null,
+                "cascadeType": {
+                    "1": "1",
+                    "2": "2",
+                    "4": "4",
+                    "8": "8",
+                    "16": "16"
+                },
+                "fetchType": "lazy",
+                "orphanRemoval": true
+            }
+        }
+    },
+    "formgen\\bo\\MultiFormOptionT": {
+        "id": {
+            "prop-def": "n2n\\impl\\persistence\\orm\\property\\hangar\\scalar\\IntegerPropDef",
+            "props": {
+                "size": "32",
+                "signed": true
+            }
+        },
+        "n2nLocale": {
+            "prop-def": "n2n\\impl\\persistence\\orm\\property\\hangar\\N2nLocalePropDef",
+            "props": {
+                "required": true
+            }
+        },
+        "emptyValue": {
+            "prop-def": "n2n\\impl\\persistence\\orm\\property\\hangar\\scalar\\StringPropDef",
+            "props": {
+                "length": "255",
+                "charset": null
+            }
+        },
+        "multiFormOption": {
+            "prop-def": "n2n\\impl\\persistence\\orm\\property\\hangar\\relation\\ManyToOnePropDef",
+            "props": {
+                "targetEntityClass": "formgen\\bo\\MultiFormOption",
+                "cascadeType": [],
+                "fetchType": "lazy"
+            }
+        }
+    },
+    "formgen\\bo\\MultiFormOption": {
+        "type": {
+            "prop-def": "n2n\\impl\\persistence\\orm\\property\\hangar\\scalar\\StringPropDef",
+            "props": {
+                "length": "255",
+                "charset": null
+            }
+        },
+        "multiFormOptionValues": {
+            "prop-def": "n2n\\impl\\persistence\\orm\\property\\hangar\\relation\\OneToManyPropDef",
+            "props": {
+                "targetEntityClass": "formgen\\bo\\MultiFormOptionValue",
+                "mappedBy": "multiFormOption",
+                "cascadeType": {
+                    "1": "1",
+                    "2": "2",
+                    "4": "4",
+                    "8": "8",
+                    "16": "16"
+                },
+                "fetchType": "lazy",
+                "orphanRemoval": true
+            }
+        },
+        "multiFormOptionTs": {
+            "prop-def": "n2n\\impl\\persistence\\orm\\property\\hangar\\relation\\OneToManyPropDef",
+            "props": {
+                "targetEntityClass": "formgen\\bo\\MultiFormOptionT",
+                "mappedBy": "multiFormOption",
+                "cascadeType": {
+                    "1": "1",
+                    "2": "2",
+                    "4": "4",
+                    "8": "8",
+                    "16": "16"
+                },
+                "fetchType": "lazy",
+                "orphanRemoval": true
+            }
+        }
+    },
+    "formgen\\bo\\MultiFormOptionValue": {
+        "id": {
+            "prop-def": "n2n\\impl\\persistence\\orm\\property\\hangar\\scalar\\IntegerPropDef",
+            "props": {
+                "size": "32",
+                "signed": true
+            }
+        },
+        "multiFormOptionValueTs": {
+            "prop-def": "n2n\\impl\\persistence\\orm\\property\\hangar\\relation\\OneToManyPropDef",
+            "props": {
+                "targetEntityClass": "formgen\\bo\\MultiFormOptionValueT",
+                "mappedBy": "multiFormOptionValue",
+                "cascadeType": {
+                    "1": "1",
+                    "2": "2",
+                    "4": "4",
+                    "8": "8",
+                    "16": "16"
+                },
+                "fetchType": "lazy",
+                "orphanRemoval": true
+            }
+        },
+        "multiFormOption": {
+            "prop-def": "n2n\\impl\\persistence\\orm\\property\\hangar\\relation\\ManyToOnePropDef",
+            "props": {
+                "targetEntityClass": "formgen\\bo\\MultiFormOption",
+                "cascadeType": [],
+                "fetchType": "lazy"
+            }
+        },
+        "selected": {
+            "prop-def": "n2n\\impl\\persistence\\orm\\property\\hangar\\scalar\\BooleanPropDef",
+            "props": {
+                "required": false
+            }
+        }
     }
 }

@@ -50,12 +50,14 @@ class StringFormOption extends FormOption {
 	 * @return StringFormOptionT
 	 */
 	public function ts(N2nLocale ... $n2nLocales) {
-		$n2nLocales[] = N2nLocale::getDefault();
-		$n2nLocales[] = N2nLocale::getFallback();
-		
 		return Translator::findAny($this->stringFormOptionTs, ... $n2nLocales);
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 * @see \formgen\bo\FormElement::buildMag()
+	 * @return Mag|null
+	 */
 	public function buildMag(N2nLocale $n2nLocale): ?Mag {
 		return $this->applyAttributes($n2nLocale, new StringMag($this->getLabel($n2nLocale), 
 				$this->ts($n2nLocale)->getDefault(), $this->isMandatory(), $this->maxLength, $this->multiline));

@@ -33,12 +33,14 @@ class FormText extends FormElement {
 	 * @return FormTextT
 	 */
 	public function t(N2nLocale ... $n2nLocales) {
-		$n2nLocales[] = N2nLocale::getDefault();
-		$n2nLocales[] = N2nLocale::getFallback();
-		
 		return Translator::findAny($this->formTextTs, ... $n2nLocales);
 	}
 	
+	/**
+	 * {@inheritDoc}
+	 * @see \formgen\bo\FormElement::createUiComponent()
+	 * @return UiComponent|null
+	 */
 	public function createUiComponent(HtmlView $view): ?UiComponent {
 		$ckeHtml = new CkeHtmlBuilder($view);
 		
