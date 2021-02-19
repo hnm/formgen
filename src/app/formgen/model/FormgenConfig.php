@@ -21,7 +21,7 @@ class FormgenConfig implements RequestScoped {
 		$this->templateViewId = '\formgen\view\dynamicFormTemplate.html';
 		
 		if ($n2nContext->getModuleManager()->containsModuleNs('bstmpl')) {
-			$this->templateViewId = '\bstmpl\view\bstemplate.html';
+			$this->templateViewId = '\bstmpl\view\bsTemplate.html';
 		}
 		
 		$this->formSubmitUrl = $request->getContextPath()->ext(
