@@ -30,6 +30,11 @@
 			"formgen\\" : "src/app/formgen"
 		}
 	},
+	"autoload-dev" : {
+		"psr-4" : {
+			"formgen\\" : "src/test/formgen"
+		}
+	},
 	"require-dev" : {
 		"n2n/hangar" : "^8.0.0",
 		"phpunit/phpunit" : "^9.5"
