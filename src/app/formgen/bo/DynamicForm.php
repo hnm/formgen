@@ -14,10 +14,12 @@ use n2n\persistence\orm\annotation\AnnoOrderBy;
 use rocket\impl\ei\component\prop\translation\Translator;
 use n2n\util\type\CastUtils;
 use formgen\model\FormgenUtils;
+use n2n\persistence\orm\annotation\AnnoEntityListeners;
+use n2n\web\http\orm\ResponseCacheClearer;
 
 class DynamicForm extends ObjectAdapter {
 	private static function _annos(AnnoInit $ai) {
-		$ai->c(new AnnoTable('formgen_dynamic_form'));
+		$ai->c(new AnnoEntityListeners(ResponseCacheClearer::getClass()), new AnnoTable('formgen_dynamic_form'));
 		$ai->p('formElements', new AnnoOneToMany(FormElement::getClass(), 
 						null, CascadeType::ALL, FetchType::EAGER, true), 
 				new AnnoOrderBy(array('orderIndex' => 'ASC')));

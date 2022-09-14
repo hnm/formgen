@@ -9,10 +9,12 @@ use n2nutil\jquery\datepicker\mag\DateTimePickerMag;
 use n2n\reflection\annotation\AnnoInit;
 use n2n\persistence\orm\annotation\AnnoTable;
 use n2n\util\type\CastUtils;
+use n2n\persistence\orm\annotation\AnnoEntityListeners;
+use n2n\web\http\orm\ResponseCacheClearer;
 
 class DateFormOption extends FormOption {
 	private static function _annos(AnnoInit $ai) {
-		$ai->c(new AnnoTable('formgen_date_form_option'));
+		$ai->c(new AnnoEntityListeners(ResponseCacheClearer::getClass()), new AnnoTable('formgen_date_form_option'));
 	}
 	
 	const DEFAULT_TYPE_TODAY = 'today';

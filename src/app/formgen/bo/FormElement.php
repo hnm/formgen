@@ -10,10 +10,12 @@ use n2n\impl\web\ui\view\html\HtmlView;
 use n2n\web\ui\UiComponent;
 use n2n\l10n\N2nLocale;
 use n2n\web\dispatch\mag\Mag;
+use n2n\persistence\orm\annotation\AnnoEntityListeners;
+use n2n\web\http\orm\ResponseCacheClearer;
 
 abstract class FormElement extends ObjectAdapter {
 	private static function _annos(AnnoInit $ai) {
-		$ai->c(new AnnoTable('formgen_form_element'), new AnnoInheritance(InheritanceType::JOINED));
+		$ai->c(new AnnoEntityListeners(ResponseCacheClearer::getClass()), new AnnoTable('formgen_form_element'), new AnnoInheritance(InheritanceType::JOINED));
 	}
 
 	private $id;

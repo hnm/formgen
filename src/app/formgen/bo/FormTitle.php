@@ -11,10 +11,12 @@ use n2n\web\ui\UiComponent;
 use n2n\persistence\orm\annotation\AnnoOneToMany;
 use n2n\persistence\orm\CascadeType;
 use formgen\model\FormgenConfig;
+use n2n\persistence\orm\annotation\AnnoEntityListeners;
+use n2n\web\http\orm\ResponseCacheClearer;
 
 class FormTitle extends FormElement {
 	private static function _annos(AnnoInit $ai) {
-		$ai->c(new AnnoTable('formgen_form_title'));
+		$ai->c(new AnnoEntityListeners(ResponseCacheClearer::getClass()), new AnnoTable('formgen_form_title'));
 		$ai->p('formTitleTs', new AnnoOneToMany(FormTitleT::getClass(), 'formTitle', CascadeType::ALL, null, true));
 	}
 	

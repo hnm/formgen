@@ -12,10 +12,12 @@ use n2n\util\type\CastUtils;
 use n2n\util\type\ArgUtils;
 use rocket\impl\ei\component\prop\translation\Translator;
 use n2n\util\col\ArrayUtils;
+use n2n\persistence\orm\annotation\AnnoEntityListeners;
+use n2n\web\http\orm\ResponseCacheClearer;
 
 class MultiFormOption extends FormOption {
 	private static function _annos(AnnoInit $ai) {
-		$ai->c(new AnnoTable('formgen_multi_form_option'));
+		$ai->c(new AnnoEntityListeners(ResponseCacheClearer::getClass()), new AnnoTable('formgen_multi_form_option'));
 		$ai->p('multiFormOptionValues', new AnnoOneToMany(
 				MultiFormOptionValue::getClass(), 'multiFormOption', \n2n\persistence\orm\CascadeType::ALL, null, true));
 		$ai->p('multiFormOptionTs', new AnnoOneToMany(MultiFormOptionT::getClass(), 'multiFormOption', \n2n\persistence\orm\CascadeType::ALL, null, true));

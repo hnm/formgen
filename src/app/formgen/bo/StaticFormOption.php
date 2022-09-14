@@ -11,10 +11,12 @@ use n2nutil\bootstrap\ui\BsFormHtmlBuilder;
 use n2n\impl\web\ui\view\html\HtmlView;
 use formgen\model\FormgenConfig;
 use n2n\web\ui\UiComponent;
+use n2n\persistence\orm\annotation\AnnoEntityListeners;
+use n2n\web\http\orm\ResponseCacheClearer;
 
 class StaticFormOption extends FormElement {
 	private static function _annos(AnnoInit $ai) {
-		$ai->c(new AnnoTable('formgen_static_form_option'));
+		$ai->c(new AnnoEntityListeners(ResponseCacheClearer::getClass()), new AnnoTable('formgen_static_form_option'));
 		$ai->p('staticFormOptionTs', new AnnoOneToMany(StaticFormOptionT::getClass(), 
 				'staticFormOption', CascadeType::ALL, null, true));
 	}

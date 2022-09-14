@@ -6,10 +6,12 @@ use n2n\persistence\orm\annotation\AnnoTable;
 use n2n\l10n\N2nLocale;
 use n2n\impl\web\dispatch\mag\model\NumericMag;
 use n2n\web\dispatch\mag\Mag;
+use n2n\persistence\orm\annotation\AnnoEntityListeners;
+use n2n\web\http\orm\ResponseCacheClearer;
 
 class NumericFormOption extends FormOption {
 	private static function _annos(AnnoInit $ai) {
-		$ai->c(new AnnoTable('formgen_numeric_form_option'));
+		$ai->c(new AnnoEntityListeners(ResponseCacheClearer::getClass()), new AnnoTable('formgen_numeric_form_option'));
 	}
 	
 	private $default;

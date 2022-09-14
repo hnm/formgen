@@ -9,10 +9,12 @@ use n2n\impl\web\dispatch\mag\model\StringMag;
 use rocket\impl\ei\component\prop\translation\Translator;
 use n2n\persistence\orm\annotation\AnnoOneToMany;
 use n2n\persistence\orm\CascadeType;
+use n2n\persistence\orm\annotation\AnnoEntityListeners;
+use n2n\web\http\orm\ResponseCacheClearer;
 
 class StringFormOption extends FormOption {
 	private static function _annos(AnnoInit $ai) {
-		$ai->c(new AnnoTable('formgen_string_form_option'));
+		$ai->c(new AnnoEntityListeners(ResponseCacheClearer::getClass()), new AnnoTable('formgen_string_form_option'));
 		$ai->p('stringFormOptionTs', new AnnoOneToMany(StringFormOptionT::getClass(), 
 				'stringFormOption', CascadeType::ALL, null, true));
 	}

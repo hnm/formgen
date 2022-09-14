@@ -7,10 +7,12 @@ use n2n\reflection\annotation\AnnoInit;
 use n2n\l10n\N2nLocale;
 use n2n\persistence\orm\annotation\AnnoManyToOne;
 use rocket\impl\ei\component\prop\translation\Translatable;
+use n2n\persistence\orm\annotation\AnnoEntityListeners;
+use n2n\web\http\orm\ResponseCacheClearer;
 
 class StringFormOptionT extends ObjectAdapter implements Translatable {
 	private static function _annos(AnnoInit $ai) {
-		$ai->c(new AnnoTable('formgen_string_form_option_t'));
+		$ai->c(new AnnoEntityListeners(ResponseCacheClearer::getClass()), new AnnoTable('formgen_string_form_option_t'));
 		$ai->p('stringFormOption', new AnnoManyToOne(StringFormOption::getClass()));
 	}
 	

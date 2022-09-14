@@ -7,10 +7,12 @@ use n2n\persistence\orm\annotation\AnnoTable;
 use n2n\persistence\orm\annotation\AnnoManyToOne;
 use rocket\impl\ei\component\prop\translation\Translatable;
 use n2n\l10n\N2nLocale;
+use n2n\persistence\orm\annotation\AnnoEntityListeners;
+use n2n\web\http\orm\ResponseCacheClearer;
 
 class DynamicFormT extends ObjectAdapter implements Translatable {
 	private static function _annos(AnnoInit $ai) {
-		$ai->c(new AnnoTable('formgen_dynamic_form_t'));
+		$ai->c(new AnnoEntityListeners(ResponseCacheClearer::getClass()), new AnnoTable('formgen_dynamic_form_t'));
 		$ai->p('dynamicForm', new AnnoManyToOne(DynamicForm::getClass()));
 	}
 	

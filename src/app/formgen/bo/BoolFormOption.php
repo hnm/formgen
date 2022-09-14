@@ -7,10 +7,12 @@ use n2n\impl\web\dispatch\mag\model\BoolMag;
 use n2n\reflection\annotation\AnnoInit;
 use n2n\persistence\orm\annotation\AnnoTable;
 use n2n\l10n\DynamicTextCollection;
+use n2n\persistence\orm\annotation\AnnoEntityListeners;
+use n2n\web\http\orm\ResponseCacheClearer;
 
 class BoolFormOption extends FormOption {
 	private static function _annos(AnnoInit $ai) {
-		$ai->c(new AnnoTable('formgen_bool_form_option'));
+		$ai->c(new AnnoEntityListeners(ResponseCacheClearer::getClass()), new AnnoTable('formgen_bool_form_option'));
 	}
 	private $default;
 	

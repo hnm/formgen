@@ -7,10 +7,12 @@ use n2n\persistence\orm\annotation\AnnoTable;
 use n2n\reflection\annotation\AnnoInit;
 use formgen\bo\DynamicForm;
 use n2n\persistence\orm\annotation\AnnoManyToOne;
+use n2n\persistence\orm\annotation\AnnoEntityListeners;
+use n2n\web\http\orm\ResponseCacheClearer;
 
 class CiDynamicForm extends ContentItem {
 	private static function _annos(AnnoInit $ai) {
-		$ai->c(new AnnoTable('formgen_ci_dynamic_form'));
+		$ai->c(new AnnoEntityListeners(ResponseCacheClearer::getClass()), new AnnoTable('formgen_ci_dynamic_form'));
 		$ai->p('dynamicForm', new AnnoManyToOne(DynamicForm::getClass()));
 	}
 

@@ -10,10 +10,12 @@ use n2n\persistence\orm\annotation\AnnoOneToMany;
 use n2n\persistence\orm\CascadeType;
 use n2n\impl\web\ui\view\html\HtmlView;
 use n2n\web\ui\UiComponent;
+use n2n\persistence\orm\annotation\AnnoEntityListeners;
+use n2n\web\http\orm\ResponseCacheClearer;
 
 abstract class FormOption extends FormElement {
 	private static function _annos(AnnoInit $ai) {
-		$ai->c(new AnnoTable('formgen_form_option'));
+		$ai->c(new AnnoEntityListeners(ResponseCacheClearer::getClass()), new AnnoTable('formgen_form_option'));
 		$ai->p('formOptionTs', new AnnoOneToMany(FormOptionT::getClass(), 'formOption', 
 				CascadeType::ALL, null, true));
 	}

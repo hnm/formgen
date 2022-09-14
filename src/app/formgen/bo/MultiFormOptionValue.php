@@ -8,10 +8,12 @@ use n2n\persistence\orm\annotation\AnnoOneToMany;
 use n2n\l10n\N2nLocale;
 use rocket\impl\ei\component\prop\translation\Translator;
 use n2n\persistence\orm\annotation\AnnoManyToOne;
+use n2n\persistence\orm\annotation\AnnoEntityListeners;
+use n2n\web\http\orm\ResponseCacheClearer;
 
 class MultiFormOptionValue extends ObjectAdapter {
 	private static function _annos(AnnoInit $ai) {
-		$ai->c(new AnnoTable('formgen_multi_form_option_value'));
+		$ai->c(new AnnoEntityListeners(ResponseCacheClearer::getClass()), new AnnoTable('formgen_multi_form_option_value'));
 		$ai->p('multiFormOptionValueTs', new AnnoOneToMany(MultiFormOptionValueT::getClass(), 'multiFormOptionValue', \n2n\persistence\orm\CascadeType::ALL, null, true));
 		$ai->p('multiFormOption', new AnnoManyToOne(MultiFormOption::getClass()));
 	}
