@@ -321,8 +321,8 @@
             "nature": "entity",
             "entity": "formgen\\bo\\EmailFormOption",
             "dataSourceName": null,
-            "label": "E-Maileingabe",
-            "pluralLabel": "E-Maileingaben",
+            "label": "E\u2010Maileingabe",
+            "pluralLabel": "E\u2010Maileingaben",
             "iconType": null,
             "identityStringPattern": "{formOptionTs.label}",
             "props": {
@@ -337,7 +337,7 @@
                         "readOnly": false,
                         "draftable": false
                     },
-                    "label": "Formular Kopie senden?",
+                    "label": "eine Kopie des Formulars an diese Mail schicken?",
                     "objectProperty": "sendCopy",
                     "entityProperty": "sendCopy"
                 }
