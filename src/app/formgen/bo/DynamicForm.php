@@ -67,7 +67,7 @@ class DynamicForm extends ObjectAdapter {
 		$this->dynamicFormTs = $dynamicFormTs;
 	}
 	
-	public function determineSubmitLabel(N2nLocale $n2nLocale, string $alternativeLabel = null) {
+	public function determineSubmitLabel(N2nLocale $n2nLocale, ?string $alternativeLabel = null) {
 		$translation = Translator::find($this->dynamicFormTs, $n2nLocale);
 		if (null !== $translation && (null !== ($submitLabel = $translation->getSubmitLabel()))) return $submitLabel;
 		

@@ -49,7 +49,7 @@ class MultiFormOptionT extends ObjectAdapter implements Translatable {
 		return $this->emptyValue;
 	}
 
-	public function setEmptyValue(string $emptyValue = null) {
+	public function setEmptyValue(?string $emptyValue = null) {
 		$this->emptyValue = $emptyValue;
 	}
 }

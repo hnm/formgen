@@ -39,7 +39,7 @@ class MultiFormOption extends FormOption {
 		return $this->type;
 	}
 	
-	public function setType(string $type = null) {
+	public function setType(?string $type = null) {
 		$this->type = $type;
 	}
 	

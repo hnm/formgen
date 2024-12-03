@@ -27,7 +27,7 @@ class MultiFormOptionValue extends ObjectAdapter {
 		return $this->id;
 	}
 
-	public function setId(int $id = null) {
+	public function setId(?int $id = null) {
 		$this->id = $id;
 	}
 
@@ -46,7 +46,7 @@ class MultiFormOptionValue extends ObjectAdapter {
 		return $this->multiFormOption;
 	}
 
-	public function setMultiFormOption(MultiFormOption $multiFormOption = null) {
+	public function setMultiFormOption(?MultiFormOption $multiFormOption = null) {
 		$this->multiFormOption = $multiFormOption;
 	}
 
