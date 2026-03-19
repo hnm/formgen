@@ -25,7 +25,8 @@
 	"require" : {
 		"n2n/n2n-composer-module-installer" : "^7.1",
 		"n2n/n2nutil-bootstrap" : "^4.3.3",
-		"n2n/rocket" : "^3"
+		"n2n/rocket" : "^3",
+		"hnm/ch-hnm-util" : "^7.2.0"
 	},
 	"autoload" : {
 		"psr-4" : {
