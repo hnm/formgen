@@ -7,7 +7,6 @@
 	 * @var \n2n\impl\web\ui\view\html\HtmlView $view
 	 */
 	$view = HtmlView::view($view);
-	$html = HtmlView::html($view);
 	
 	$formgenDynamicForm = $view->getParam('formgenDynamicForm');
 	$view->assert($formgenDynamicForm instanceof FormgenDynamicForm);
