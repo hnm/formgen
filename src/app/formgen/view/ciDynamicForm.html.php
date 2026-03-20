@@ -4,6 +4,9 @@
 	use formgen\model\FormgenDynamicForm;
 	use formgen\model\FormgenConfig;
 		
+	/**
+	 * @var \n2n\impl\web\ui\view\html\HtmlView $view
+	 */
 	$view = HtmlView::view($view);
 	$html = HtmlView::html($view);
 	
