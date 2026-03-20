@@ -36,7 +36,7 @@ class DateFormOption extends FormOption {
 		return $this->defaultDate;
 	}
 
-	public function setDefaultDate(\DateTime $defaultDate = null) {
+	public function setDefaultDate(?\DateTime $defaultDate = null) {
 		$this->defaultDate = $defaultDate;
 	}
 

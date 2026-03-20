@@ -52,6 +52,10 @@ class FormgenConfig implements RequestScoped {
 	public function buildFormSubmitUrl(DynamicForm $dynamicForm) {
 		return $this->formSubmitUrl->extR(null, array('f' => $dynamicForm->getId()));
 	}
+
+	public function buildGetDynmicFormPartUrl(DynamicForm $dynamicForm) {
+		return $this->formSubmitUrl->extR(['getdynamicformpart'], array('f' => $dynamicForm->getId()));
+	}
 	
 	public function getFormLegendClassName() {
 		return $this->formLegendClassName;

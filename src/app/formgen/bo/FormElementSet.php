@@ -55,7 +55,7 @@ class FormElementSet extends ObjectAdapter {
 		return $this->title;
 	}
 
-	public function setTitle(string $title = null) {
+	public function setTitle(?string $title = null) {
 		$this->title = $title;
 	}
 }

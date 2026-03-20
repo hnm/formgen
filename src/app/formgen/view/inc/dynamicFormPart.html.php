@@ -4,10 +4,12 @@
 	use formgen\model\FormgenConfig;
 	use formgen\model\FormgenDynamicForm;
 	use n2n\web\dispatch\map\PropertyPath;
+use ch\hnm\util\n2n\bot\ui\BotHtmlBuilder;
 	
 	$view = HtmlView::view($view);
 	$html = HtmlView::html($view);
 	$formHtml = HtmlView::formHtml($view);
+	$botHtml = new BotHtmlBuilder($view);
 	
 	$formgenDynamicForm = $view->getParam('formgenDynamicForm');
 	$view->assert($formgenDynamicForm instanceof FormgenDynamicForm);
@@ -24,6 +26,7 @@
 		$formgenConfig->buildFormSubmitUrl($dynamicForm)) ?>
 	<?php $view->import('formElements.html', ['formElements' => $dynamicForm->getFormElements(), 
 			'propPath' => PropertyPath::createFromArray(['dynamicMagForm'])]) ?>
+	<?php $botHtml->hiddenImage() ?>
 	<?php $bsFormHtml->buttonSubmitGroup('send', 
 			$dynamicForm->determineSubmitLabel($view->getN2nLocale(), $view->getL10nText('common_submit_txt'))) ?>
 <?php $bsFormHtml->close() ?>

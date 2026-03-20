@@ -7,6 +7,7 @@ use formgen\model\FormgenDao;
 use n2n\web\http\PageNotFoundException;
 use formgen\model\FormgenDynamicForm;
 use n2n\web\http\Request;
+use n2n\l10n\N2nLocale;
 
 class FormgenController extends ControllerAdapter {
 	const PATH = 'fgpost';
@@ -33,5 +34,15 @@ class FormgenController extends ControllerAdapter {
 		}
 		
 		$this->forward('..\view\dynamicFormThanks.html', array('dynamicForm' => $dynamicForm));
+	}
+	
+	public function doGetDynamicFormPart(N2nLocale $n2nLocale, FormgenDao $formgenDao, ParamQuery $f) {
+		$dynamicForm = $formgenDao->getDynamicFormById((string) $f);
+		if (null === $dynamicForm) {
+			throw new PageNotFoundException('Invalid form id ' . $f);
+		}
+		
+		$this->forward('..\view\inc\dynamicFormPart.html',
+				['formgenDynamicForm' => new FormgenDynamicForm($n2nLocale, $dynamicForm)]);
 	}
 }
